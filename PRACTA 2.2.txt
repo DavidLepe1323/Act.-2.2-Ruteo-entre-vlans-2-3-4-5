@@ -1,0 +1,84 @@
+Switch>ena
+Switch#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#vlan 10
+Switch(config-vlan)#name VLAN10
+Switch(config-vlan)#exit
+Switch(config)#vlan 20
+Switch(config-vlan)#name VLAN20
+Switch(config-vlan)#exit
+Switch(config)#vlan 30
+Switch(config-vlan)#name VLAN30
+Switch(config-vlan)#exit
+Switch(config)#vlan 40
+Switch(config-vlan)#name VLAN40
+Switch(config-vlan)#exit
+Switch(config)#vlan 50
+Switch(config-vlan)#name VLAN50
+Switch(config-vlan)#exit
+Switch(config)#interface range fastEthernet 0/2-6
+Switch(config-if-range)#switchport mode acces 
+Switch(config-if-range)#switchport access vlan 20
+Switch(config-if-range)#exit
+Switch(config)#interface range fastEthernet 0/7-11
+Switch(config-if-range)#switchport mode access
+Switch(config-if-range)#switchport access vlan 30
+Switch(config-if-range)#exit
+Switch(config)#interface range fastEthernet 0/12-15
+Switch(config-if-range)#switchport mode access 
+Switch(config-if-range)#switchport access vlan 40
+Switch(config-if-range)#exit
+Switch(config)#interface range fastEthernet 0/16-20
+Switch(config-if-range)#switchport mode access 
+Switch(config-if-range)#switchport access vlan 50
+Switch(config-if-range)#exit
+Switch(config)#interface vlan20
+Switch(config-if)#
+%LINK-5-CHANGED: Interface Vlan20, changed state to up
+
+Switch(config-if)#no sh
+Switch(config-if)#ip add
+Switch(config-if)#ip address 192.168.48.1 255.255.255.0
+Switch(config-if)#exit
+Switch(config)#interface vlan30
+Switch(config-if)#
+%LINK-5-CHANGED: Interface Vlan30, changed state to up
+
+Switch(config-if)#
+Switch(config-if)#no sh
+Switch(config-if)#ip add
+Switch(config-if)#ip address 192.168.49.1 255.255.255.0
+Switch(config-if)#exit
+Switch(config)#interface vlan40
+Switch(config-if)#
+%LINK-5-CHANGED: Interface Vlan40, changed state to up
+
+Switch(config-if)#no sh
+Switch(config-if)#ip add
+Switch(config-if)#ip address 192.168
+                             ^
+% Invalid input detected at '^' marker.
+	
+Switch(config-if)#ip add
+Switch(config-if)#ip address 192.168.50.1 255.255.255.0
+Switch(config-if)#exit
+Switch(config)#interface vlan50
+Switch(config-if)#
+%LINK-5-CHANGED: Interface Vlan50, changed state to up
+
+Switch(config-if)#no sh
+Switch(config-if)#ip add
+Switch(config-if)#ip address 192
+                             ^
+% Invalid input detected at '^' marker.
+	
+Switch(config-if)#ip add
+Switch(config-if)#ip address 192.168.51.1 255.255.255.0
+Switch(config-if)#exit
+Switch(config)#do wr
+Building configuration...
+[OK]
+Switch(config)#
+Switch(config)#end
+Switch#
+%SYS-5-CONFIG_I: Configured from console by console
